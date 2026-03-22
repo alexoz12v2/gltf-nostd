@@ -16,7 +16,7 @@
 
 
 use core::ops;
-use core::intrinsics::sqrtf32;
+use libm;
 
 #[cfg(test)]
 mod test {
@@ -117,7 +117,7 @@ impl Vector3 {
     }
 
     pub fn magnitude(&self) -> f32 {
-        unsafe {sqrtf32(self.x * self.x + self.y * self.y + self.z * self.z)}
+        libm::sqrtf(self.x * self.x + self.y * self.y + self.z * self.z)
     }
 
     pub fn multiply(&mut self, s: f32) {
@@ -363,7 +363,7 @@ impl Quaternion {
     pub fn from_matrix(m: Matrix3) -> Quaternion {
         let trace = m.trace();
         if trace >= 0.0 {
-            let s = unsafe {sqrtf32(1.0 + trace)};
+            let s = libm::sqrtf(1.0 + trace);
             let w = 0.5 * s;
             let s = 0.5 / s;
             let x = (m.y.z - m.z.y) * s;
@@ -371,7 +371,7 @@ impl Quaternion {
             let z = (m.x.y - m.y.x) * s;
             Quaternion::new(w, x, y, z)
         } else if (m.x.x > m.y.y) && (m.x.x > m.z.z) {
-            let s = unsafe {sqrtf32((m.x.x - m.y.y - m.z.z) + 1.0)};
+            let s = libm::sqrtf((m.x.x - m.y.y - m.z.z) + 1.0);
             let x = 0.5 * s;
             let s = 0.5 / s;
             let y = (m.y.x + m.x.y) * s;
@@ -379,7 +379,7 @@ impl Quaternion {
             let w = (m.y.z - m.z.y) * s;
             Quaternion::new(w, x, y, z)
         } else if m.y.y > m.z.z {
-            let s = unsafe {sqrtf32((m.y.y - m.x.x - m.z.z) + 1.0)};
+            let s = libm::sqrtf((m.y.y - m.x.x - m.z.z) + 1.0);
             let y = 0.5 * s;
             let s = 0.5 / s;
             let z = (m.z.y + m.y.z) * s;
@@ -387,7 +387,7 @@ impl Quaternion {
             let w = (m.z.x - m.x.z) * s;
             Quaternion::new(w, x, y, z)
         } else {
-            let s = unsafe {sqrtf32((m.z.z - m.x.x - m.y.y) + 1.0)};
+            let s = libm::sqrtf((m.z.z - m.x.x - m.y.y) + 1.0);
             let z = 0.5 * s;
             let s = 0.5 / s;
             let x = (m.x.z + m.z.x) * s;

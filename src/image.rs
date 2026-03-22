@@ -56,6 +56,15 @@ pub enum Source<'a> {
         /// The image data MIME type.
         mime_type: &'a str,
     },
+
+    /// The image data is contained in a URI.
+    Uri {
+        /// The URI of the image.
+        uri: &'a str,
+
+        /// The image data MIME type.
+        mime_type: Option<&'a str>,
+    },
 }
 
 /// Image data used to create a texture.
@@ -117,6 +126,12 @@ impl<'a> Image<'a> {
             let view = self.document.views().nth(index.value()).unwrap();
             let mime_type = self.json.mime_type.as_ref().map(|x| x.0.as_str()).unwrap();
             Source::View { view, mime_type }
+        } else if let Some(uri) = self.json.uri.as_ref() {
+            let mime_type = self.json.mime_type.as_ref().map(|x| x.0.as_str());
+            Source::Uri {
+                uri: uri.as_str(),
+                mime_type,
+            }
         } else {
             panic!();
         }
