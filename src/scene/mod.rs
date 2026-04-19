@@ -67,7 +67,7 @@ impl Transform {
                 );
                 let sx = i.x.magnitude();
                 let sy = i.y.magnitude();
-                let sz = (if i.determinant() < 0.0 {-1.0} else {1.0}) * i.z.magnitude();
+                let sz = (if i.determinant() < 0.0 { -1.0 } else { 1.0 }) * i.z.magnitude();
                 let scale = [sx, sy, sz];
                 i.x.multiply(1.0 / sx);
                 i.y.multiply(1.0 / sy);
@@ -284,9 +284,9 @@ impl<'a> Scene<'a> {
 
 #[cfg(test)]
 mod tests {
-    use core::f32::consts::PI;
     use crate::math::*;
     use crate::scene::Transform;
+    use core::f32::consts::PI;
 
     fn rotate(x: f32, y: f32, z: f32, r: f32) -> [f32; 4] {
         let r = Quaternion::from_axis_angle(Vector3::new(x, y, z).normalize(), r);

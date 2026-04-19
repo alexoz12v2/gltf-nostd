@@ -1,6 +1,6 @@
-use alloc::string::String;
 use crate::validation::Validate;
 use crate::{buffer, extensions, Extras, Index};
+use alloc::string::String;
 use gltf_derive::Validate;
 use serde_derive::{Deserialize, Serialize};
 

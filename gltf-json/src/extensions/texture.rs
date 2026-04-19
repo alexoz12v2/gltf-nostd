@@ -1,6 +1,6 @@
-use alloc::string::String;
 #[cfg(feature = "KHR_texture_transform")]
 use crate::{extras::Extras, validation::Validate};
+use alloc::string::String;
 use gltf_derive::Validate;
 use serde_derive::{Deserialize, Serialize};
 #[cfg(feature = "extensions")]

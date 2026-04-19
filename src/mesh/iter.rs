@@ -1,7 +1,7 @@
-use alloc::collections;
-use core::{iter, slice};
 use super::{Attribute, Mesh, MorphTarget, Primitive};
 use crate::Document;
+use alloc::collections;
+use core::{iter, slice};
 
 /// An `Iterator` that visits the morph targets of a `Primitive`.
 #[derive(Clone, Debug)]

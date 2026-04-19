@@ -1,7 +1,7 @@
-use alloc::string::String;
-use alloc::vec::Vec;
 use crate::validation::Validate;
 use crate::{camera, extensions, mesh, scene, skin, Extras, Index};
+use alloc::string::String;
+use alloc::vec::Vec;
 use gltf_derive::Validate;
 use serde_derive::{Deserialize, Serialize};
 

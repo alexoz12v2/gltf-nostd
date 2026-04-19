@@ -14,7 +14,6 @@
 //
 // Modified for the gltf crate by the gltf library developers.
 
-
 use core::ops;
 use libm;
 

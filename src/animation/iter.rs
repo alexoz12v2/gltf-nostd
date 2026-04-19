@@ -1,5 +1,5 @@
-use core::slice;
 use crate::animation::{Animation, Channel, Sampler};
+use core::slice;
 
 /// An `Iterator` that visits the channels of an animation.
 #[derive(Clone, Debug)]

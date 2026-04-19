@@ -2,11 +2,10 @@
 //
 // See LICENSE for details.
 #![no_std]
-
 #![recursion_limit = "128"]
 
-extern crate proc_macro;
 extern crate alloc;
+extern crate proc_macro;
 
 use alloc::string::ToString;
 use alloc::vec::Vec;

@@ -1,14 +1,13 @@
-use alloc::string::String;
-use alloc::vec::Vec;
-use core::{fmt, marker};
 use crate::buffer;
 use crate::extensions;
 use crate::texture;
 use crate::validation;
+use alloc::string::String;
+use alloc::vec::Vec;
+use core::{fmt, marker};
+use core2::io;
 use gltf_derive::Validate;
 use serde_derive::{Deserialize, Serialize};
-use core2::io;
-
 
 use crate::path::Path;
 use crate::{
@@ -256,7 +255,7 @@ impl Root {
     // {
     //     serde_json::to_writer(writer, self)
     // }
-    // 
+    //
     // /// Serialize as a pretty-printed JSON byte writertor.
     // pub fn to_writer_pretty<W>(&self, writer: W) -> Result<(), Error>
     // where
@@ -406,9 +405,9 @@ impl_get!(Texture, textures);
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     use alloc::borrow::ToOwned;
     use alloc::vec;
-    use super::*;
 
     #[test]
     fn index_is_partialeq() {

@@ -1,6 +1,6 @@
-use core::{iter, mem};
-use core::marker::PhantomData;
 use byteorder::{ByteOrder, LE};
+use core::marker::PhantomData;
+use core::{iter, mem};
 
 use crate::{accessor, buffer};
 

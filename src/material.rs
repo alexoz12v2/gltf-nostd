@@ -1,5 +1,5 @@
-use alloc::string::String;
 use crate::{texture, Document};
+use alloc::string::String;
 
 pub use json::material::AlphaMode;
 #[cfg(feature = "extensions")]

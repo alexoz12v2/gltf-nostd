@@ -1,7 +1,7 @@
-use alloc::string::String;
-use core::fmt;
 use crate::validation::{Checked, Error, USize64};
 use crate::{buffer, extensions, Extras, Index, Path, Root};
+use alloc::string::String;
+use core::fmt;
 use gltf_derive::Validate;
 use serde::{de, ser};
 use serde_derive::{Deserialize, Serialize};

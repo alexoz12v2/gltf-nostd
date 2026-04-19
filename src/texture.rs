@@ -1,5 +1,5 @@
-use alloc::string::String;
 use crate::Document;
+use alloc::string::String;
 
 pub use json::texture::{MagFilter, MinFilter, WrappingMode};
 #[cfg(feature = "extensions")]

@@ -56,8 +56,8 @@
 //! # }
 //! ```
 
-use alloc::string::String;
 use crate::{buffer, Document};
+use alloc::string::String;
 
 pub use json::accessor::ComponentType as DataType;
 pub use json::accessor::Type as Dimensions;

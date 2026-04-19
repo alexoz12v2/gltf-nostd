@@ -1,7 +1,7 @@
+use crate::binary::Error::Io;
 use alloc::borrow::Cow;
 use core::fmt;
 use core2::io;
-use crate::binary::Error::Io;
 
 /// Represents a Glb loader error.
 #[derive(Debug)]
@@ -115,7 +115,10 @@ impl ChunkHeader {
             b"BIN\0" => Ok(ChunkType::Bin),
             _ => Err(Error::UnknownChunkType(ty)),
         }?;
-        Ok(Self { length: u8_arr_to_u32(length), ty })
+        Ok(Self {
+            length: u8_arr_to_u32(length),
+            ty,
+        })
     }
 }
 
@@ -233,5 +236,5 @@ impl fmt::Display for Error {
 impl core::error::Error for Error {}
 
 fn u8_arr_to_u32(arr: [u8; 4]) -> u32 {
-    arr[0] as u32 | (arr[1] as u32) << 8 | (arr[2] as u32) << 16 | (arr[3] as u32) << 24 
+    arr[0] as u32 | (arr[1] as u32) << 8 | (arr[2] as u32) << 16 | (arr[3] as u32) << 24
 }

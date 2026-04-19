@@ -1,5 +1,5 @@
-use core::slice;
 use crate::{Document, Node};
+use core::slice;
 
 /// An `Iterator` that visits the nodes in a scene.
 #[derive(Clone, Debug)]

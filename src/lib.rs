@@ -88,9 +88,9 @@ extern crate approx;
 #[macro_use]
 extern crate lazy_static;
 
+extern crate alloc;
 /// Contains (de)serializable data structures that match the glTF JSON text.
 pub extern crate gltf_json as json;
-extern crate alloc;
 
 /// Accessors for reading vertex attributes from buffer views.
 pub mod accessor;
@@ -228,7 +228,6 @@ pub enum Error {
     // #[cfg(feature = "import")]
     // #[cfg_attr(docsrs, doc(cfg(feature = "import")))]
     // Image(image_crate::ImageError),
-
     /// The `BIN` chunk of binary glTF is referenced but does not exist.
     #[cfg(feature = "import")]
     #[cfg_attr(docsrs, doc(cfg(feature = "import")))]
@@ -248,7 +247,6 @@ pub enum Error {
     // #[cfg(feature = "import")]
     // #[cfg_attr(docsrs, doc(cfg(feature = "import")))]
     // UnsupportedImageFormat(image_crate::DynamicImage),
-
     /// Unsupported URI scheme.
     #[cfg(feature = "import")]
     #[cfg_attr(docsrs, doc(cfg(feature = "import")))]

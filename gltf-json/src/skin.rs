@@ -1,6 +1,6 @@
+use crate::{accessor, extensions, scene, Extras, Index};
 use alloc::string::String;
 use alloc::vec::Vec;
-use crate::{accessor, extensions, scene, Extras, Index};
 use gltf_derive::Validate;
 use serde_derive::{Deserialize, Serialize};
 

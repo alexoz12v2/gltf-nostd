@@ -1,7 +1,7 @@
-use alloc::string::String;
-use alloc::vec::Vec;
 #[allow(unused)]
 use crate::{buffer, Document, Error, Result};
+use alloc::string::String;
+use alloc::vec::Vec;
 
 // #[cfg(feature = "import")]
 // #[cfg_attr(docsrs, doc(cfg(feature = "import")))]

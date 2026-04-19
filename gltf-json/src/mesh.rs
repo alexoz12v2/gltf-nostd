@@ -1,10 +1,10 @@
+use crate::validation::{Checked, Error};
+use crate::{accessor, extensions, material, Extras, Index};
 use alloc::collections::BTreeMap;
 use alloc::format;
 use alloc::string::{String, ToString};
 use alloc::vec::Vec;
 use core::fmt;
-use crate::validation::{Checked, Error};
-use crate::{accessor, extensions, material, Extras, Index};
 use gltf_derive::Validate;
 use serde::{de, ser};
 use serde_derive::{Deserialize, Serialize};

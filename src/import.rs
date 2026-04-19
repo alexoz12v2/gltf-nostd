@@ -1,5 +1,5 @@
-use alloc::vec::Vec;
 use crate::buffer;
+use alloc::vec::Vec;
 // use crate::image;
 
 use crate::{Document, Error, Gltf, Result};
@@ -13,9 +13,7 @@ impl buffer::Data {
     /// be resolved from this directory.
     /// `blob` represents the `BIN` section of a binary glTF file,
     /// and it will be taken to fill the buffer if the `source` refers to it.
-    pub fn from_blob(
-        blob: &mut Option<Vec<u8>>,
-    ) -> Result<Self> {
+    pub fn from_blob(blob: &mut Option<Vec<u8>>) -> Result<Self> {
         let mut data = blob.take().ok_or(Error::MissingBlob)?;
         while data.len() % 4 != 0 {
             data.push(0);
@@ -30,10 +28,7 @@ impl buffer::Data {
 ///
 /// This function is intended for advanced users who wish to forego loading image data.
 /// A typical user should call [`import`] instead.
-pub fn import_buffers(
-    document: &Document,
-    mut blob: Option<Vec<u8>>,
-) -> Result<Vec<buffer::Data>> {
+pub fn import_buffers(document: &Document, mut blob: Option<Vec<u8>>) -> Result<Vec<buffer::Data>> {
     let mut buffers = Vec::new();
     for buffer in document.buffers() {
         let data = buffer::Data::from_blob(&mut blob)?;
@@ -82,7 +77,7 @@ pub fn import_buffers(
 //                 image_crate::load_from_memory_with_format(encoded_image, encoded_format)?
 //             }
 //         };
-// 
+//
 //         image::Data::new(decoded_image)
 //     }
 // }
@@ -110,9 +105,6 @@ fn import_impl(Gltf { document, blob }: Gltf) -> Result<Import> {
     let import = (document, buffer_data);
     Ok(import)
 }
-
-
-
 
 fn import_slice_impl(slice: &[u8]) -> Result<Import> {
     import_impl(Gltf::from_slice(slice)?)

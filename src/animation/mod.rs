@@ -1,5 +1,5 @@
-use alloc::string::String;
 use crate::{accessor, scene, Document};
+use alloc::string::String;
 
 #[cfg(feature = "utils")]
 use crate::Buffer;

@@ -1,6 +1,6 @@
-use core::marker::PhantomData;
 use super::Rotations;
 use crate::Normalize;
+use core::marker::PhantomData;
 
 /// Casting iterator for `Rotations`.
 #[derive(Clone, Debug)]

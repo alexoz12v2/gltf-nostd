@@ -1,5 +1,5 @@
-use core::marker::PhantomData;
 use crate::Normalize;
+use core::marker::PhantomData;
 
 use super::ReadWeights;
 

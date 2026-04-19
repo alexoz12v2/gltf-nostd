@@ -1,5 +1,5 @@
-use core::marker::PhantomData;
 use super::ReadJoints;
+use core::marker::PhantomData;
 
 /// Casting iterator for `Joints`.
 #[derive(Clone, Debug)]

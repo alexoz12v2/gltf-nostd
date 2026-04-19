@@ -31,10 +31,10 @@ pub struct Node {
 
 #[cfg(feature = "KHR_lights_punctual")]
 pub mod khr_lights_punctual {
-    use alloc::string::String;
-    use core::fmt;
     use crate::validation::{Checked, Error};
     use crate::{Extras, Index, Path, Root};
+    use alloc::string::String;
+    use core::fmt;
     use gltf_derive::Validate;
     use serde::{de, ser};
     use serde_derive::{Deserialize, Serialize};
@@ -203,9 +203,9 @@ pub mod khr_lights_punctual {
 
 #[cfg(feature = "KHR_materials_variants")]
 pub mod khr_materials_variants {
-    use alloc::string::String;
     use crate::validation::{Error, Validate};
     use crate::{Path, Root};
+    use alloc::string::String;
     use serde_derive::{Deserialize, Serialize};
 
     #[derive(Clone, Debug, Deserialize, Serialize)]

@@ -1,6 +1,6 @@
-use alloc::string::String;
 #[allow(unused_imports)] // different features use different imports
 use crate::{material::StrengthFactor, texture, validation::Validate, Extras};
+use alloc::string::String;
 use gltf_derive::Validate;
 use serde_derive::{Deserialize, Serialize};
 #[cfg(feature = "extensions")]

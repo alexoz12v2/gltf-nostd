@@ -1,5 +1,5 @@
-use core::marker::PhantomData;
 use super::ReadIndices;
+use core::marker::PhantomData;
 
 /// Casting iterator for `Indices`.
 #[derive(Clone, Debug)]

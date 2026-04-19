@@ -1,5 +1,5 @@
-use alloc::string::{String, ToString};
 use crate::{extensions, Extras};
+use alloc::string::{String, ToString};
 use gltf_derive::Validate;
 use serde_derive::{Deserialize, Serialize};
 
